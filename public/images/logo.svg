@@ -1,0 +1,15 @@
+<svg width="600" height="600" xmlns="http://www.w3.org/2000/svg">
+ <g id="Layer_1">
+  <title>Layer 1</title>
+  <line id="svg_5" y2="215" x2="525.5" y1="216" x1="426.5" stroke-width="15" stroke="#e5e5e5" fill="none"/>
+  <line fill-opacity="0" id="svg_4" y2="263" x2="562.5" y1="264" x1="438.5" stroke-width="15" stroke="#e5e5e5" fill="none"/>
+  <line id="svg_3" y2="312" x2="526" y1="313" x1="427" stroke-width="15" stroke="#e5e5e5" fill="none"/>
+  <line id="svg_2" y2="264" x2="167" y1="265" x1="43" stroke-width="15" stroke="#e5e5e5" fill="none"/>
+  <line id="svg_6" y2="215" x2="175" y1="216" x1="76" stroke-width="15" stroke="#e5e5e5" fill="none"/>
+  <line id="svg_7" y2="312" x2="177" y1="313" x1="78" stroke-width="15" stroke="#e5e5e5" fill="none"/>
+  <ellipse stroke-width="15" ry="134.5" rx="134.5" id="svg_1" cy="265.5" cx="300" stroke="#e5e5e5" fill="none"/>
+  <text font-style="normal" font-weight="bold" transform="matrix(3.62994, 0, 0, 3.30738, -383.563, -916.397)" xml:space="preserve" text-anchor="start" font-family="sans-serif" font-size="24" id="svg_8" y="427.59201" x="119.47894" stroke-width="0" stroke="#ffffff" fill="#e5e5e5">EasyLearn</text>
+  <text font-style="normal" font-weight="normal" transform="matrix(7.89393, 0, 0, 6.99651, -719.208, -648.302)" xml:space="preserve" text-anchor="start" font-family="sans-serif" font-size="24" id="svg_9" y="137.90108" x="121.23802" stroke="#e5e5e5" fill="#e5e5e5">E</text>
+ </g>
+
+</svg>

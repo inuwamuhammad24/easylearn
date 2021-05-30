@@ -1,0 +1,32 @@
+{
+  "name": "mysite",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon db --ignore frontend-js --ignore public/ & webpack --watch"
+  },
+  "dependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.1",
+    "axios": "^0.21.1",
+    "babel-loader": "^8.2.2",
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.25.1",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.4.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "flash": "^1.1.0",
+    "google-auth-library": "^7.1.0",
+    "mongodb": "^3.6.8",
+    "nodemon": "^2.0.7",
+    "validator": "^13.6.0",
+    "webpack": "^5.33.2",
+    "webpack-cli": "^4.6.0"
+  },
+  "devDependencies": {
+    "@webpack-cli/generators": "^2.0.0"
+  }
+}

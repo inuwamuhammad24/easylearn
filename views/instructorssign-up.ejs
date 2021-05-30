@@ -1,0 +1,71 @@
+<%- include('includes/header') %>
+<%- include('includes/navHeader') %>
+
+<div class="success-overlay-container">
+    <div class="success-overlay-inner">
+        <div class="alert-container">
+            <div class="alert-head">
+                <i class="fas fa-check"></i>
+                <h1>SUCCESS</h1>
+                <p>Your account has been created Successfully</p>
+                <a href="#">SIGN IN NOW</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="signup-instructor-container">
+    <div class="signup-instructor-container-inner">
+        <div class="signup-instructor-sidebar1">
+            <h2>Sign Up for a Free and become a member of our teachers community</h2>
+        </div>
+        
+        <div class="signup-instructor-sidebar2">
+            <div class="signup-instructor-sidebar2-header">
+                <h2>Join EasyLearn For Free</h2>
+            </div>
+            <form class="form-container" action="/login" method="POST">
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                <label for="username">
+                    <p class="signup-instructor-sidebar2-p">Select a Username</p>
+                    <input type="text" name="username" autocomplete="off">
+                    <div class="error-signup"></div>
+                </label>
+
+                <label for="email">
+                    <p class="signup-instructor-sidebar2-p">Your Email</p>
+                    <input type="email" name="email" class="email" autocomplete="off">
+                    <div class="error-signup"></div>
+                </label>
+
+                <label for="firstname">
+                    <p class="signup-instructor-sidebar2-p">First Name</p>
+                    <input type="text" name="firstname" class="firstName" autocomplete="off">
+                    <div class="error-signup"></div>
+                </label>
+
+                <label for="lastname">
+                    <p class="signup-instructor-sidebar2-p">Last Name</p>
+                    <input type="text" name="lastname" class="lastName" autocomplete="off">
+                    <div class="error-signup"></div>
+                </label>
+
+                <label for="password">
+                    <p class="signup-instructor-sidebar2-p">Password</p>
+                    <input type="password" name="password" autocomplete="off">
+                    <div class="error-signup"></div>
+                </label>
+
+                <button class="form-button">
+                    <div class="form-btn-text">SIGN UP NOW</div>
+                    <div class="btn-loading-container"><div class="btn-loading"></div></div>
+                </button>
+            </form>
+
+            <p class="signup-instructor-haveAccount">Already have an account? <a href="#">Sign In</a></p>
+        </div>
+    </div>
+</div>
+
+<%- include('includes/footer') %>
+

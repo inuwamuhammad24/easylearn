@@ -1,0 +1,15 @@
+<svg width="600" height="500" xmlns="http://www.w3.org/2000/svg">
+ <g id="Layer_1">
+  <title>Layer 1</title>
+  <rect id="svg_8" height="387" width="566" y="40" x="17.5" stroke="#000000" fill="#ffffff"/>
+  <line id="svg_5" y2="194" x2="531.5" y1="195" x1="464.5" stroke-width="15" stroke="#000000" fill="none"/>
+  <line fill-opacity="0" id="svg_4" y2="242" x2="578.50001" y1="243" x1="471.5" stroke-width="15" stroke="#000000" fill="none"/>
+  <line id="svg_3" y2="291" x2="532" y1="292" x1="453" stroke-width="15" stroke="#000000" fill="none"/>
+  <line id="svg_2" y2="245" x2="128" y1="246" x1="22" stroke-width="15" stroke="#000000" fill="none"/>
+  <line id="svg_6" y2="196" x2="136" y1="197" x1="64" stroke-width="15" stroke="#000000" fill="none"/>
+  <line id="svg_7" y2="293" x2="145" y1="294" x1="67" stroke-width="15" stroke="#000000" fill="none"/>
+  <ellipse stroke-width="15" ry="165.50001" rx="168" id="svg_1" cy="234.49999" cx="298.5" stroke="#000000" fill="none"/>
+  <text font-style="normal" font-weight="normal" transform="matrix(11.9621, 0, 0, 11.3169, -1174, -1114.93)" xml:space="preserve" text-anchor="start" font-family="sans-serif" font-size="24" id="svg_9" y="128.19858" x="115.65577" fill="#000000">E</text>
+ </g>
+
+</svg>
