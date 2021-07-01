@@ -1,0 +1,42 @@
+<%- include('includes/header') %>
+<% isLoggedIn ? isLoggedIn = true : isLoggedIn = false %>
+<%- include('includes/navHeader') %>
+
+<div class="signup-instructor-container">
+    <div class="main-login-container">
+        <div class="main-login-container-inner">
+            
+            <%- include('includes/errors') %>
+            <%- include('includes/success') %>
+            <div class="login-avartar">
+                <img src="/images/profile.jpg" alt="IMG" />
+            </div>
+
+            <div class="login-sidebar">
+                <form class="form-container" action="/login" method="POST">
+                    <label for="email">
+                        <p class="signup-instructor-sidebar2-p">Your Email</p>
+                        <input type="email" name="email" class="email" autocomplete="off">
+                        <div class="error-signup"></div>
+                    </label>
+    
+                    <label for="password">
+                        <p class="signup-instructor-sidebar2-p">Password</p>
+                        <input type="password" name="password" autocomplete="off">
+                        <div class="error-signup"></div>
+                    </label>
+    
+                    <button class="login-btn"">
+                        <div class="form-btn-text">Login</div>
+                        <div class="btn-loading-container"><div class="btn-loading"></div></div>
+                    </button>
+                </form>
+    
+                <div class="forget-password"><div>Did you forget your password?</div><a href="#">Reset</a></div>
+                <div class="forget-password"><div>Don't have an Accout?</div><a href="/instructor/signup">Sign Up</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('includes/footer') %>

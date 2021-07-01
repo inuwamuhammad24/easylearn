@@ -1,0 +1,59 @@
+<%- include('includes/header') %>
+<% isLoggedIn ? isLoggedIn = true : isLoggedIn = false %>
+<%- include('includes/navHeader') %>
+
+<div class="topics-container">
+    <div class="mobile-content">
+        <i class="fas fa-chevron-right" arial-hidden="true"></i>
+    </div>
+    <div class="topics-container-inner">
+        <div class="placeholder"></div>
+        <div class="topics-sidebar1">
+            <div class="topics-sidebar1-head">
+                <h1><%= mainTopic.name %></h1>
+            </div>
+
+            <div class="topics-contents-container">
+                <div class="topics-title">
+                    <div>
+                        <ul>
+                           <% relatedTitles.forEach(title => { %>
+                                <a href="/course/<%= title._id %>">
+                                    <% if (title.title == content.title) { %>
+                                        <li style="background: #f2f2f2;color: black;border-left: 3px solid;"><%- title.title %></li>
+                                    <% } else { %>
+                                        <li><%- title.title %></li>
+                                    <% } %>
+                                </a>
+                           <% }) %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topics-sidebar2">
+                <p class="navigator"> <a href="#">Courses</a> <span><i class="fas fa-angle-double-right"></i></span> <a href="<%= course._id %>"><%= course.name %></a> <span><i class="fas fa-angle-double-right"></i></span> <a href=""><%= mainTopic.name %> </a> <span><i class="fas fa-angle-double-right"></i></span> <%= content.title %> <span></span></p>
+
+            <div class="topics-unit">
+                <h1><%- content.title %></h1>
+            </div>
+
+            <div class="topics-unit-content">
+                <div class="small-info">
+                    <p><i class="far fa-calendar-check"></i> <%= content.date.getDate() %> <%= content.date.toLocaleString('default', { month: 'short' }); %>, <%= content.date.getFullYear() %> <span><i class="far fa-user"></i>By Inuwa Muhammad</span></p>
+                </div>
+                <div class="topics-sidebar2-inner">
+                    <%- content.textarea %>
+                </div>
+
+                <div class="content-nav-container">
+                    <div class="content-backword"></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('includes/footer') %>

@@ -1,9 +1,15 @@
 <%- include('includes/header')%>
+<% isLoggedIn ? isLoggedIn = true : isLoggedIn = false %>
 <%- include('includes/navHeader')%>    
+
+       
+
+<%- include('includes/errors')%>    
+
         <div class="welcome-m-container">
             <div class="welcome-sidebar1">
                 <div class="welcome-m-h1">
-                    <h1>Your Favourite Online Learning Platform</h1>
+                    <h1>Your <span style="color: rgb(212, 78, 0);">Favourite</span> Online Platform</h1>
                 </div>
 
                 <div class="welcome-m-p">
@@ -15,7 +21,7 @@
 
             <div class="welcome-sidebar2">
                 <div class="welcome-m-img">
-                    <img src="/images/img3.svg" alt="IMG">
+                    <img src="/images/education8.svg" alt="IMG">
                 </div>
             </div>
         </div>
@@ -34,223 +40,37 @@
     
                 <div class="rec-topics-flex">
                     <div class="rec-topics-sidebar1">
-                        <div class="rec-box">
-                            <a href="#">
-                                <div class="rec-box-top" style="background-image: url('/images/maths.jpg');">
-                                    <div class="rec-box-top-overlay">
-                                        <div class="free">
-                                            <p>free</p>
+                        <% topics.forEach(topic => { %>
+                            <div class="rec-box">
+                                <a href="#">
+                                    <div class="rec-box-top" style="background-image: url('<%= topic.pic %>');">
+                                        <div class="rec-box-top-overlay">
+                                            <div class="free">
+                                                <% if (topic.isFree == true) { %>
+                                                    <p>free</p>
+                                                <% } %>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+            
+                                    <div class="rec-box-bottom">
+                                        <div class="rec-box-title">
+                                            <h1><%= topic.name %></h1>
+                                        </div>
         
-                                <div class="rec-box-bottom">
-                                    <div class="rec-box-title">
-                                        <h1>Mathematical and logic</h1>
-                                    </div>
+                                        <div class="rec-box-message">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing</p>
+                                        </div>
     
-                                    <div class="rec-box-message">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-                                    </div>
-
-                                    <div class="rec-box-author">
-                                        <h2>Author</h2>
-                                        <p>Inuwa Muhammad Ahmad</p>
-                                        <p>University of Jos</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="rec-box">
-                            <a href="#">
-                                <div class="rec-box-top" style="background-image: url('/images/computer.jpg');">
-                                    <div class="rec-box-top-overlay">
-
-                                    </div>
-                                </div>
-        
-                                <div class="rec-box-bottom">
-                                    <div class="rec-box-title">
-                                        <h1>Introduction to Computer Science, Basic History</h1>
-                                    </div>
-    
-                                    <div class="rec-box-message">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-                                    </div>
-
-                                    <div class="rec-box-author">
-                                        <h2>Author</h2>
-                                        <p>Inuwa Muhammad Ahmad</p>
-                                        <p>University of Jos</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="rec-box">
-                            <a href="#">
-                                <div class="rec-box-top" style="background-image: url('/images/chemistry.jpg');">
-                                    <div class="rec-box-top-overlay">
-                                        <div class="free">
-                                            <p>free</p>
+                                        <div class="rec-box-author">
+                                            <h2>Author</h2>
+                                            <p>Inuwa Muhammad Ahmad</p>
+                                            <p>University of Jos</p>
                                         </div>
                                     </div>
-                                </div>
-        
-                                <div class="rec-box-bottom">
-                                    <div class="rec-box-title">
-                                        <h1>Chemical Equilibrum</h1>
-                                    </div>
-    
-                                    <div class="rec-box-message">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-                                    </div>
-
-                                    <div class="rec-box-author">
-                                        <h2>Author</h2>
-                                        <p>Inuwa Muhammad Ahmad</p>
-                                        <p>University of Jos</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="rec-box">
-                            <a href="#">
-                                <div class="rec-box-top" style="background-image: url('/images/english.jpg');">
-                                    <div class="rec-box-top-overlay">
-                                        
-                                    </div>
-                                </div>
-        
-                                <div class="rec-box-bottom">
-                                    <div class="rec-box-title">
-                                        <h1>English Language</h1>
-                                    </div>
-    
-                                    <div class="rec-box-message">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-                                    </div>
-
-                                    <div class="rec-box-author">
-                                        <h2>Author</h2>
-                                        <p>Inuwa Muhammad Ahmad</p>
-                                        <p>University of Jos</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-    
-                    <div class="rec-topics-sidebar2">
-                        <div class="rec-box">
-                            <a href="#">
-                                <div class="rec-box-top" style="background-image: url('/images/biology.jpg');">
-                                    <div class="rec-box-top-overlay">
-                                        <div class="free">
-                                            <p>free</p>
-                                        </div>
-                                    </div>
-                                </div>
-        
-                                <div class="rec-box-bottom">
-                                    <div class="rec-box-title">
-                                        <h1>The cell circle</h1>
-                                    </div>
-    
-                                    <div class="rec-box-message">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-                                    </div>
-
-                                    <div class="rec-box-author">
-                                        <h2>Author</h2>
-                                        <p>Inuwa Muhammad Ahmad</p>
-                                        <p>University of Jos</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="rec-box">
-                            <a href="#">
-                                <div class="rec-box-top" style="background-image: url('/images/ecology.jpg');">
-                                    <div class="rec-box-top-overlay">
-
-                                    </div>
-                                </div>
-        
-                                <div class="rec-box-bottom">
-                                    <div class="rec-box-title">
-                                        <h1>The Evironment (Ecology)</h1>
-                                    </div>
-    
-                                    <div class="rec-box-message">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-                                    </div>
-
-                                    <div class="rec-box-author">
-                                        <h2>Author</h2>
-                                        <p>Inuwa Muhammad Ahmad</p>
-                                        <p>University of Jos</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="rec-box">
-                            <a href="#">
-                                <div class="rec-box-top" style="background-image: url('/images/chemistry.jpg');">
-                                    <div class="rec-box-top-overlay">
-                                        <div class="free">
-                                            <p>free</p>
-                                        </div>
-                                    </div>
-                                </div>
-        
-                                <div class="rec-box-bottom">
-                                    <div class="rec-box-title">
-                                        <h1>Chemical Equilibrum</h1>
-                                    </div>
-    
-                                    <div class="rec-box-message">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-                                    </div>
-
-                                    <div class="rec-box-author">
-                                        <h2>Author</h2>
-                                        <p>Inuwa Muhammad Ahmad</p>
-                                        <p>University of Jos</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="rec-box">
-                            <a href="#">
-                                <div class="rec-box-top" style="background-image: url('/images/english.jpg');">
-                                    <div class="rec-box-top-overlay">
-                                        
-                                    </div>
-                                </div>
-        
-                                <div class="rec-box-bottom">
-                                    <div class="rec-box-title">
-                                        <h1>English Language</h1>
-                                    </div>
-    
-                                    <div class="rec-box-message">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-                                    </div>
-
-                                    <div class="rec-box-author">
-                                        <h2>Author</h2>
-                                        <p>Inuwa Muhammad Ahmad</p>
-                                        <p>University of Jos</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+                                </a>
+                            </div>
+                        <% }) %>
                     </div>
                 </div>
             </div>

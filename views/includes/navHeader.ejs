@@ -19,17 +19,25 @@
             </ul>
         </div>
 
-        <div class="login">
-            <li class="search-icon"><i class="fas fa-search"></i></li>
-            <div class="mnavlogin">
-                <a href="#"><button>Login</button></a>
-                <div class="mobile-menu">
-                    <div class="n1 mnav"></div>
-                    <div class="n2 mnav"></div>
-                    <div class="n3 mnav"></div>
+            <div class="login">
+                <li class="search-icon"><i class="fas fa-search"></i></li>
+                <div class="mnavlogin">
+                    <% if (isLoggedIn == true) { %>
+                        <div class="profile-pic-container">
+                            <div>
+                                <img src="/images/profile.jpg"  alt="Profile">
+                            </div>
+                        </div>
+                    <% } else { %>
+                        <a href="/instructor/signup"><button>Join</button></a>
+                    <% } %>
+                    <div class="mobile-menu">
+                        <div class="n1 mnav"></div>
+                        <div class="n2 mnav"></div>
+                        <div class="n3 mnav"></div>
+                    </div>
                 </div>
             </div>
-        </div>
     </div>
 
     <div class="mobile-nav-menus">

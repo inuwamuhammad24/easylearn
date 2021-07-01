@@ -1,6 +1,6 @@
 const express = require('express')
 const courseRoute = express.Router()
-const coursesControllers = require('../../controllers/coursesController/courses') 
+const coursesControllers = require('../../controllers/coursesController/coursesController') 
 
 courseRoute.get('/', coursesControllers.courses)
 

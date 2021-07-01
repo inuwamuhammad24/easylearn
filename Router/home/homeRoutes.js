@@ -1,30 +1,32 @@
 const express = require('express')
 const homeRoute = express.Router() 
 const homeControllers = require('../../controllers/homeControllers/homeControllers')
-const {OAuth2Client} = require('google-auth-library');
+const instructorControllers = require('../../controllers/instructorControllers/instructorControllers')
+const cloudinary = require('cloudinary').v2;
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+const multer = require('multer')
 const dotenv = require('dotenv')
 dotenv.config()
 
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECTRET
+})
+
+const storage = new CloudinaryStorage({
+    cloudinary: cloudinary,
+    folder: 'cvs',
+    allowedFormats: ['jpg', 'svg', 'png'],
+})
+
+const parser = multer({ storage })
+
 homeRoute.get('/', homeControllers.home)
-homeRoute.post('/login', (req, res) => {
-    const client = new OAuth2Client(process.env.CLIENT_ID);
-    async function verify() {
-    const ticket = await client.verifyIdToken({
-        idToken: req.body.idtoken,
-        audience: process.env.CLIENT_ID,  // Specify the CLIENT_ID of the app that accesses the backend
-        // Or, if multiple clients access the backend:
-        //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
-    });
-    const payload = ticket.getPayload();
-    const userid = payload['sub'];
-    const user = {
-        firstName: payload.given_name,
-        lastName: payload.family_name,
-        email: payload.email
-    }
-    res.json(JSON.stringify(user))
-    }
-    verify().catch(console.error);
-    })
+homeRoute.get('/login', homeControllers.loginGet)
+homeRoute.post('/login', homeControllers.login)
+homeRoute.get('/signout', homeControllers.signout)
+
+homeRoute.post('/uploadContentImage', parser.single('file'), homeControllers.uploadImageContent)
 
 module.exports = homeRoute

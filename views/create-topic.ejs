@@ -3,21 +3,66 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/images/logo1.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/main.css">
+    <script src="https://cdn.tiny.cloud/1/jwrj227o677kcalqtbejvjwq5qge4px87fa7i7k8vuh8fjs6/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
+  </head>
+  <body>
 
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <%- include('includes/navHeader') %>
+
+    <div class="create-topic-container">
+      <h1>Create a topic</h1>
+      <div>
+        <form method="post">
+          <div class="create-topic-grid">
+            <div>
+              <label for="title">Title*</label>
+              <input type="text" name="title" id="title" placeholder="e.g Mathematics">
+            </div>
+
+            <div class="new-course-container">
+              <div>
+                <label for="courses">Select a Course*</label>
+                <select name="course" id="courses">
+                <option value="select_a_course">Select a course</option>
+                  <% topics.forEach(topic => { %>
+                    <option value="<%= topic._id %>"><%= topic.name %></option>
+                  <% }) %>
+                </select>
+              </div>
+            </div>
+            
+            <div class="new-course-container">
+              <div>
+                <label for="topics">Select a topic*</label>
+                <select name="topics" id="topics">
+              </select>
+            </div>
+            </div>
+
+
+          </div>
+          <textarea id="mytextarea" placeholder="type your content here." name="textarea"></textarea>
+
+          <button class="create-topic-btn">Create</button>
+        </form>
+      </div>
+    </div>
 
     <script>
       tinymce.init({
-        selector: '#mytextarea'
+        selector: '#mytextarea',
+        images_upload_url: '/uploadContentImage',
+        plugins: 'image | link | media | code',
+        menubar: '',
+        toolbar: 'undo redo | styleselect | bold italic | link image | media | code',
+        image_caption: true,
+        height: 400,
+        content_style: "body { margin: 20px; line-height: 1.5em; } p {color: #222}",
       });
     </script>
-
-  </head>
-
-  <body>
-  <h1>TinyMCE Quick Start Guide</h1>
-    <form method="post">
-      <textarea id="mytextarea">Hello, World!</textarea>
-    </form>
+    <script src="/main-bundled.js"></script>
   </body>
 </html>

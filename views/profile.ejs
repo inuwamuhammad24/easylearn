@@ -1,0 +1,184 @@
+<%- include('includes/header') %>
+<% isLoggedIn ? isLoggedIn = true : isLoggedIn = false %>
+<%- include('includes/navHeader') %>
+
+
+<div class="profile-container">
+    <div class="profile-container-inner">
+        <div class="profile-sidebar1">
+            <div class="profile-header">
+                <div class="profile-pic">
+                    <% if (data) { %>
+                        <img src="https://res.cloudinary.com/dcx2lew2b/image/upload/v1622645001/WhatsApp_Image_2021-05-24_at_4.44.28_PM_azxwhu.jpg" alt="IMG">
+                    <% } else { %>
+                        <img src="/images/profile.jpg" alt="IMG">
+                    <% } %>
+                </div>
+
+                <div class="profile-name">
+                    <h2><%= data.firstName %> <br> <%= data.lastName %></h2>
+                </div>
+
+                <div class="profile-desc">
+                    <p>Full stack developer</p>
+                </div>
+
+                <div class="profile-edit">
+                    <button>Change Picture</button>
+                </div>
+
+                <div class="profile-edit">
+                    <a href="/signout">Sign Out</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-sidebar2">
+            <div class="profile-info-flex">
+                <div class="profile-info-container">
+                    <div class="profile-info-name">
+                        <label for="username">Username:</label>
+                        <p><%- data.username %></p>
+                    </div>
+
+                    <div class="profile-info-name">
+                        <label for="name">Full Name:</label>
+                        <p><%- data.firtsName %> <%= data.lastName %></p>
+                    </div>
+    
+                    <div class="profile-info-name">
+                        <label for="name">Email:</label>
+                        <p><%= data.email %></p>
+                    </div>
+    
+                    <div class="profile-info-name">
+                        <label for="name">Phone Number:</label>
+                        <p><%= data.phone %></p>
+                    </div>
+
+                    <div class="edit-profile-btn">
+                        <button>Edit Profile</button>
+                    </div>
+                </div>
+
+                <div class="profile-activity-container">
+                    <div class="profile-activity-inner">
+                        <div class="profile-activity-header">
+                            <h2>working on <%= courses.length %> coureses</h2>
+                        </div>
+
+                        <div class="profile-activity-content">
+                            <ul>
+                                <% courses.forEach(course => { %>
+                                    <a href="/course/<%= course._id %>"><li><%= course.name %></li></a>
+                                <% }) %>
+                            </ul>
+
+                            <div class="new-course-container">
+                                <div class="create-course-overlay">
+                                    <div class="create-course-overlay-inner">
+                                        <div class="close-btn">
+                                            <i class="fas fa-times"></i>
+                                        </div>
+                                      <div class="create-course-content">
+                                        <form action="/instructor/create-course" method="POST" enctype="multipart/form-data">
+                                            <div>
+                                              <label for="courseName">Course Name*</label>
+                                              <input type="text" placeholder="e.g Mathematics" name="courseName" id="courseName">
+                                            </div>
+                              
+                                            <div>
+                                              <label for="pic">Select a picture for the course*</label>
+                                              <input type="file" name="pic" id="pic">
+                                            </div>
+                              
+                                            <div class="create-course-content-checkbox">
+                                              <label for="isFree">Is the course Free*</label>
+                                              <input type="checkbox" name="isFree" id="isFree">
+                                            </div>
+                              
+                                            <button>Create Course</button>
+                                        </form>
+                              
+                                      </div>
+                                    </div>
+                                  </div>
+                            
+                                <div  class="create-new-course-btn">
+                                  <button>New course</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="profile-activity-box">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- topics container -->
+            <div class="profile-activity-container">
+                <div class="profile-activity-inner">
+                    <div class="profile-activity-header">
+                        <h2>working on <%= courses.length %> coureses</h2>
+                    </div>
+
+                    <div class="profile-activity-content">
+                        <ul>
+                            <% courses.forEach(course => { %>
+                                <a href="/course/<%= course._id %>"><li><%= course.name %></li></a>
+                            <% }) %>
+                        </ul>
+
+                        <div class="new-course-container">
+                            <div class="create-course-overlay topic-container">
+                                <div class="create-course-overlay-inner">
+                                    <div class="close-btn">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                  <div class="create-course-content">
+                                    <form action="/instructor/create-new-topic" method="POST">
+
+                                        <div>
+                                          <label for="topicName">Topic Name*</label>
+                                          <input type="text" placeholder="e.g Calculus" name="topicName" id="topicName">
+                                        </div>
+
+                                        <div>
+                                            <label for="course">Select Course</label>
+                                            <select name="course" id="course">
+                                                <option value="select_course">Please Select a Course</option>
+                                                <% courses.forEach(course => { %>
+                                                    <option value="<%= course._id %>"><%= course.name %></option>
+                                               <% }) %>
+                                            </select>
+                                        </div>
+
+                                        <div>
+                                            <input type="hidden" name="author" value="<%= data._id %>" id="author">
+                                        </div>
+                                        
+                                        <button>Create Topic</button>
+                                    </form>
+                          
+                                  </div>
+                                </div>
+                              </div>
+                        
+                            <div  class="create-new-course-btn topics-btn">
+                              <button>New course</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-activity-box">
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('includes/footer') %>
