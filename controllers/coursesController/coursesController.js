@@ -20,3 +20,7 @@ exports.coursesContent = async (req, res) => {
        res.render('404', {isLoggedIn})
    })
 }
+
+exports.viewCourse = function(req, res) {
+    res.send('You will view all Your topics soon')
+}

@@ -64,13 +64,13 @@
                 <div class="profile-activity-container">
                     <div class="profile-activity-inner">
                         <div class="profile-activity-header">
-                            <h2>working on <%= courses.length %> coureses</h2>
+                            <h2>Your Courses(<%= courses.length %>)</h2>
                         </div>
 
                         <div class="profile-activity-content">
                             <ul>
                                 <% courses.forEach(course => { %>
-                                    <a href="/course/<%= course._id %>"><li><%= course.name %></li></a>
+                                    <a href="/course/view/<%= course._id %>"><li><%= course.name %></li></a>
                                 <% }) %>
                             </ul>
 
@@ -82,6 +82,9 @@
                                         </div>
                                       <div class="create-course-content">
                                         <form action="/instructor/create-course" method="POST" enctype="multipart/form-data">
+                                            <div class="new-course">
+                                                <h2>New Course</h2>
+                                            </div>
                                             <div>
                                               <label for="courseName">Course Name*</label>
                                               <input type="text" placeholder="e.g Mathematics" name="courseName" id="courseName">
@@ -139,6 +142,9 @@
                                     </div>
                                   <div class="create-course-content">
                                     <form action="/instructor/create-new-topic" method="POST">
+                                        <div class="new-course">
+                                            <h2>New Topic</h2>
+                                        </div>
 
                                         <div>
                                           <label for="topicName">Topic Name*</label>

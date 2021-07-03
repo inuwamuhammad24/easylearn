@@ -41,7 +41,13 @@
 
             <div class="topics-unit-content">
                 <div class="small-info">
-                    <p><i class="far fa-calendar-check"></i> <%= content.date.getDate() %> <%= content.date.toLocaleString('default', { month: 'short' }); %>, <%= content.date.getFullYear() %> <span><i class="far fa-user"></i>By Inuwa Muhammad</span></p>
+                    <div class="small-info-pic">
+                        <img src="/images/profile.jpg" alt="Author">
+                    </div>
+                    <div>
+                        <div><p><span>Author:</span> <a href="#">Inuwa Muhammad</a></p></div>
+                        <div><p> <span>Last updated: </span> <%= content.date.getDate() %> <%= content.date.toLocaleString('default', { month: 'short' }); %>, <%= content.date.getFullYear() %></p></div> 
+                    </div>
                 </div>
                 <div class="topics-sidebar2-inner">
                     <%- content.textarea %>
