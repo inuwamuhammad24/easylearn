@@ -1,0 +1,27 @@
+<%- include('includes/header')%>
+<% isLoggedIn ? isLoggedIn = true : isLoggedIn = false %>
+<%- include('includes/navHeader')%>  
+
+<div class="courses-container">
+    <div class="courses-container-inner">
+        <h1 class="course-head">All courses</h1>
+        <div class="courses-topics-container">
+            <% courses.forEach(course => { %>
+                <div class="courses-topics-inner">
+                    <div class="course-title">
+                        <a href="<%= course._id %>/view">
+                            <%= course.name %>
+                            <% if (course.isFree) { %>
+                                <p>Free</p>
+                            <% } else { %>
+                                <p>&#8358;1,200</p>
+                            <% } %>
+                        </a>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+<%- include('includes/footer') %>

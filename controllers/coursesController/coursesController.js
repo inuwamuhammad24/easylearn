@@ -2,7 +2,11 @@ const { render, response } = require('../../app')
 const Course = require('../../models/Courses')
 
 exports.courses = (req, res) => {
-    res.send('Thank you for visiting our courses page')
+    let isLoggedIn = false
+    if (req.session.user) isLoggedIn = true
+    Course.findAllCourses().then((courses) => {
+        res.render('courses', {isLoggedIn, courses: courses})
+    }).catch(err => console.log(err))
 }
 
 exports.coursesContent = async (req, res) => {

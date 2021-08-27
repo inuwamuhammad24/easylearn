@@ -8,6 +8,14 @@ function Course () {
 
 }
 
+Course.findAllCourses = function() {
+    return new Promise((resolve, reject) => {
+        coursesCollection.find({}).toArray().then((courses) => {
+            resolve(courses)
+        }).catch(err => reject(err))
+    })
+}
+
 Course.findContentById = function(id) {
     return new Promise(async (resolve, reject) => {
         if (typeof(id) != 'string' || !ObjectID.isValid(id)) {
